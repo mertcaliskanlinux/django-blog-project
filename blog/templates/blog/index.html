@@ -1,0 +1,34 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+{% block title %}İndex{% endblock title %}
+
+{% block content %}
+
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-md-3">
+            
+            {% include 'partials/_categories.html' %}
+            
+        </div>
+        <div class="col-md-9">
+            <h2>HomePage</h2>
+            <hr>
+            {% for blog in blogs %}
+                {% include 'blog/_blog.html' %}
+            {% endfor %}
+            
+        </div>
+    </div>
+</div>
+
+
+
+{% block js_files %}
+    <script src="{% static 'blog/js/script.js' %}"></script>
+{% endblock js_files %}
+
+{% endblock content %}
+
+
+
